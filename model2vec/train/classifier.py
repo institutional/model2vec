@@ -317,7 +317,7 @@ class StaticModelForClassification(FinetunableStaticModel):
         self.w = self.construct_weights()
         self.train()
 
-    def _prepare_dataset(self, X: list[str], y: LabelType, max_length: int = 512) -> TextDataset:
+    def _prepare_dataset(self, X: list[str], y: LabelType, max_length: int | None = None) -> TextDataset:
         """
         Prepare a dataset. For multilabel classification, each target is converted into a multi-hot vector.
 

@@ -363,7 +363,7 @@ class StaticModel:
         self,
         sentences: Sequence[str],
         show_progress_bar: bool = False,
-        max_length: int | None = 512,
+        max_length: int | None = None,
         batch_size: int = 1024,
         use_multiprocessing: bool = True,
         multiprocessing_threshold: int = 10_000,

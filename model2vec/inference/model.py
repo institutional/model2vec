@@ -110,7 +110,7 @@ class StaticModelPipeline:
         self,
         X: Sequence[str],
         show_progress_bar: bool = False,
-        max_length: int | None = 512,
+        max_length: int | None = None,
         batch_size: int = 1024,
         use_multiprocessing: bool = True,
         multiprocessing_threshold: int = 10_000,
@@ -121,7 +121,7 @@ class StaticModelPipeline:
 
         :param X: The input data to predict. Can be a list of strings or a single string.
         :param show_progress_bar: Whether to display a progress bar during prediction. Defaults to False.
-        :param max_length: The maximum length of the input sequences. Defaults to 512.
+        :param max_length: The maximum length of the input sequences. Defaults to None.
         :param batch_size: The batch size for prediction. Defaults to 1024.
         :param use_multiprocessing: Whether to use multiprocessing for encoding. Defaults to True.
         :param multiprocessing_threshold: The threshold for the number of samples to use multiprocessing. Defaults to 10,000.
@@ -150,7 +150,7 @@ class StaticModelPipeline:
         self,
         X: Sequence[str],
         show_progress_bar: bool = False,
-        max_length: int | None = 512,
+        max_length: int | None = None,
         batch_size: int = 1024,
         use_multiprocessing: bool = True,
         multiprocessing_threshold: int = 10_000,
@@ -160,7 +160,7 @@ class StaticModelPipeline:
 
         :param X: The input data to predict. Can be a list of strings or a single string.
         :param show_progress_bar: Whether to display a progress bar during prediction. Defaults to False.
-        :param max_length: The maximum length of the input sequences. Defaults to 512.
+        :param max_length: The maximum length of the input sequences. Defaults to None.
         :param batch_size: The batch size for prediction. Defaults to 1024.
         :param use_multiprocessing: Whether to use multiprocessing for encoding. Defaults to True.
         :param multiprocessing_threshold: The threshold for the number of samples to use multiprocessing. Defaults to 10,000.

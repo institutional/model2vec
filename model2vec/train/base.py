@@ -132,14 +132,14 @@ class FinetunableStaticModel(nn.Module):
         encoded = self._encode(input_ids)
         return self.head(encoded), encoded
 
-    def tokenize(self, texts: list[str], max_length: int | None = 512) -> torch.Tensor:
+    def tokenize(self, texts: list[str], max_length: int | None = None) -> torch.Tensor:
         """
         Tokenize a bunch of strings into a single padded 2D tensor.
 
         Note that this is not used during training.
 
         :param texts: The texts to tokenize.
-        :param max_length: If this is None, the sequence lengths are truncated to 512.
+        :param max_length: If set, truncate sentence length.
         :return: A 2D padded tensor
         """
         encoded: list[Encoding] = self.tokenizer.encode_batch_fast(texts, add_special_tokens=False)
