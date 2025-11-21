@@ -328,7 +328,11 @@ class StaticModelForClassification(FinetunableStaticModel):
         """
         # This is a speed optimization.
         # assumes a mean token length of 10, which is really high, so safe.
-        truncate_length = max_length * 10
+        if max_length is not None:
+            truncate_length = max_length * 10
+        else:
+            truncate_length = 512 * 10
+
         X = [x[:truncate_length] for x in X]
         tokenized: list[list[int]] = [
             encoding.ids[:max_length] for encoding in self.tokenizer.encode_batch_fast(X, add_special_tokens=False)
